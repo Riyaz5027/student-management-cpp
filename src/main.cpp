@@ -1,3 +1,4 @@
+#include <bits/stdc++.h>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -13,14 +14,14 @@ struct student
 void print_menu()
 {
     cout << "\n=== Student Management System ===\n";
-    << "1) Add Student\n";
-    << "2) List Students\n";
-    << "3) Find by id\n"
-    << "4) Update student\n"
-    << "5) Delete student\n"
-    << "6) Save to file\n"
-    << "7) Load from file\n"
-    << "0) Exit\n> ";
+    cout << "1) Add Student\n";
+    cout << "2) List Students\n";
+    cout << "3) Find by id\n";
+    cout << "4) Update student\n";
+    cout << "5) Delete student\n";
+    cout << "6) Save to file\n";
+    cout << "7) Load from file\n";
+    cout << "0) Exit\n> ";
 }
 int main()
 {
@@ -33,7 +34,7 @@ int main()
         {
             idx[db[i].id] = i;
         }
-    }
+    };
 
     auto save = [&]()
     {
@@ -64,7 +65,7 @@ int main()
         while (getline(in, line))
         {
             stringstream ss(line);
-            Student s;
+            student s;
             char comma;
             ss >> s.id >> comma >> quoted(s.name) >> comma >> quoted(s.cls) >> comma >> s.gpa;
             db.push_back(s);
@@ -82,7 +83,7 @@ int main()
 
         if (choice == 1)
         {
-            Student s;
+            student s;
             cout << "id: ";
             cin >> s.id;
             if (idx.count(s.id))
