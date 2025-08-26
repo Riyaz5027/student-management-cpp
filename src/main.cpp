@@ -96,6 +96,23 @@ int main()
                 cout << "❌ ID already exists.\n";
                 continue;
             }
+            // Name input
+            cout << "name: ";
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            getline(cin, s.name);
+
+            // Class input
+            cout << "class: ";
+            getline(cin, s.cls);
+
+            // GPA validation
+            cout << "gpa (0.0–10.0): ";
+            cin >> s.gpa;
+            if (s.gpa < 0.0 || s.gpa > 10.0)
+            {
+                cout << "❌ Invalid GPA. Must be between 0.0 and 10.0.\n";
+                continue;
+            }
             cout << "name: ";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             getline(cin, s.name);
