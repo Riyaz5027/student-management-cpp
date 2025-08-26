@@ -86,10 +86,16 @@ int main()
             student s;
             cout << "id: ";
             cin >> s.id;
-           if (s.id <= 0) {
-        cout << "❌ Invalid ID. Must be positive.\n";
-        continue;
-    }
+            if (s.id <= 0)
+            {
+                cout << "❌ Invalid ID. Must be positive.\n";
+                continue;
+            }
+            if (idx.count(s.id))
+            {
+                cout << "❌ ID already exists.\n";
+                continue;
+            }
             cout << "name: ";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             getline(cin, s.name);
