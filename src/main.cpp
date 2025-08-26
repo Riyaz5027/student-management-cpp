@@ -113,16 +113,11 @@ int main()
                 cout << "❌ Invalid GPA. Must be between 0.0 and 10.0.\n";
                 continue;
             }
-            cout << "name: ";
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            getline(cin, s.name);
-            cout << "class: ";
-            getline(cin, s.cls);
-            cout << "gpa: ";
-            cin >> s.gpa;
+            // Save student
             db.push_back(s);
             idx[s.id] = db.size() - 1;
-            cout << "Added.\n";
+            cout << "✅ Student added.\n";
+            
         }
         else if (choice == 2)
         {
