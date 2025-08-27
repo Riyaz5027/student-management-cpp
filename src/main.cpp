@@ -86,21 +86,38 @@ int main()
             student s;
             cout << "id: ";
             cin >> s.id;
-            if (idx.count(s.id))
+            if (s.id <= 0)
             {
-                cout << "id exists.\n";
+                cout << "❌ Invalid ID. Must be positive.\n";
                 continue;
             }
+            if (idx.count(s.id))
+            {
+                cout << "❌ ID already exists.\n";
+                continue;
+            }
+            // Name input
             cout << "name: ";
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             getline(cin, s.name);
+
+            // Class input
             cout << "class: ";
             getline(cin, s.cls);
-            cout << "gpa: ";
+
+            // GPA validation
+            cout << "gpa (0.0–10.0): ";
             cin >> s.gpa;
+            if (s.gpa < 0.0 || s.gpa > 10.0)
+            {
+                cout << "❌ Invalid GPA. Must be between 0.0 and 10.0.\n";
+                continue;
+            }
+            // Save student
             db.push_back(s);
             idx[s.id] = db.size() - 1;
-            cout << "Added.\n";
+            cout << "✅ Student added.\n";
+            
         }
         else if (choice == 2)
         {
