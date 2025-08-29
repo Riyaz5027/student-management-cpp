@@ -5,6 +5,7 @@ Console Student Management System in cpp (OOP+ file Handling)
 ## Student Management System (C++)
 
 Console app to add/search/update/delete students, with CSV save/load.
+A small project which helps to manage the student data
 - **Tech**: C++17, STL, file handling
 - **Highlights**: O(1) lookup via `unordered_map`, clean CLI, persistence
 
