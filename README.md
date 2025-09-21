@@ -33,7 +33,7 @@ Roadmap
  Basic tests
 
 # Contribution:
-If you have any idea submit those ideas
+- If you have any idea submit those ideas
 Any features to develop then please submit those in issues tab
 
 -----------------------------------------------------------------
